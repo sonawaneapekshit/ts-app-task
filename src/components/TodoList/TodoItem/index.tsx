@@ -1,8 +1,14 @@
 import React from 'react';
 import './index.css';
 
-const TodoItem: React.FC = () => {
-  return <li>List item</li>;
+interface TodoItemProps {
+  id: number,
+  title: string;
+}
+
+const TodoItem: React.FC<TodoItemProps> = (props) => {
+  const { id, title } = props;
+  return <li key={id}>{title}</li>;
 };
 
 export default TodoItem;
